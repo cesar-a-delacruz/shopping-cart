@@ -1,11 +1,9 @@
-import Home from "./Home";
-import Shop from "./shop/Shop";
+import { Outlet } from "react-router-dom";
 
 function Main() {
   return (
     <main>
-      <Home />
-      <Shop />
+      <Outlet />
     </main>
   );
 }
