@@ -22,7 +22,7 @@ describe("children rendering", () => {
     });
     render(<RouterProvider router={memRouter} />);
     const mainChild = document.querySelector("main > *");
-    
+
     expect(mainChild.id).toBe("shop");
   });
 });
