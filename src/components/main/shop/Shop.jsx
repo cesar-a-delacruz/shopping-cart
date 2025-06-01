@@ -4,6 +4,7 @@ import Cart from "./Cart";
 
 function Shop() {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
       .then((response) => response.json())
@@ -22,9 +23,14 @@ function Shop() {
         setProducts(newProducts);
       });
   }, []);
+
   return (
     <div id="shop">
-      <Product />
+      <div id="products">
+        {products.map((product) => (
+          <Product key={product.id} data={product} />
+        ))}
+      </div>
       <Cart />
     </div>
   );
