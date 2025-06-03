@@ -1,5 +1,5 @@
 function Cart() {
-  return <div id="cart"></div>;
+  return <dialog id="cart"></dialog>;
 }
 
 export default Cart;
