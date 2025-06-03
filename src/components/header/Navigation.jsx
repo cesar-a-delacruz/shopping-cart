@@ -5,6 +5,7 @@ function Navigation() {
     <nav>
       <Link to="/">Home</Link>
       <Link to="shop">Shop</Link>
+      <Link to="/">Checkout</Link>
     </nav>
   );
 }
