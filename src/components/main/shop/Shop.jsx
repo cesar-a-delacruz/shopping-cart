@@ -4,6 +4,7 @@ import Cart from "./Cart";
 
 function Shop() {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
@@ -14,7 +15,7 @@ function Shop() {
           const product = {
             id: item.id,
             title: item.title,
-            price: item.price,
+            price: parseFloat(item.price.toFixed(2)),
             category: item.category,
             image: item.image,
           };
@@ -28,12 +29,24 @@ function Shop() {
     <div id="shop">
       <div id="products">
         {products.map((product) => (
-          <Product key={product.id} data={product} />
+          <Product key={product.id} data={product} addToCart={addToCart} />
         ))}
       </div>
-      <Cart />
+      <Cart data={cart} />
     </div>
   );
+
+  function addToCart(id, amount) {
+    setCart((prev) => {
+      const product = {
+        ...products.find((value) => value.id === id),
+        amount: amount,
+      };
+      return [...prev, product];
+    })
+    const cartSize = document.querySelector('nav > button > span');
+    cartSize.innerHTML = (parseInt(cartSize.innerHTML) || 0 ) + amount;
+  }
 }
 
 export default Shop;
