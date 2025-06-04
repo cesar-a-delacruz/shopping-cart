@@ -6,7 +6,7 @@ function Navigation() {
       <Link to="/">Home</Link>
       <Link to="shop">Shop</Link>
       <button onClick={() => document.querySelector("dialog#cart").showModal()}>
-        Cart<span>(0)</span>
+        Cart<span></span>
       </button>
     </nav>
   );
