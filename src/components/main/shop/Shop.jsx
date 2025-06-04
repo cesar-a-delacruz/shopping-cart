@@ -43,9 +43,9 @@ function Shop() {
         amount: amount,
       };
       return [...prev, product];
-    })
-    const cartSize = document.querySelector('nav > button > span');
-    cartSize.innerHTML = (parseInt(cartSize.innerHTML) || 0 ) + amount;
+    });
+    const cartSize = document.querySelector("nav > button > span");
+    cartSize.innerHTML = (parseInt(cartSize.innerHTML) || 0) + amount;
   }
 }
 
