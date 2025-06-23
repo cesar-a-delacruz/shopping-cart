@@ -1,4 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
+import "../../styles/header/Header.css";
 
 function Header() {
   const butCart = (
