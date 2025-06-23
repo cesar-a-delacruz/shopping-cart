@@ -1,5 +1,4 @@
-import { useLocation } from "react-router-dom";
-import Navigation from "./Navigation";
+import { useLocation, Link } from "react-router-dom";
 
 function Header() {
   const butCart = (
@@ -10,7 +9,10 @@ function Header() {
   const currrenPath = useLocation().pathname;
   return (
     <header>
-      <Navigation />
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="shop">Shop</Link>
+      </nav>
       {currrenPath === "/shop" && butCart}
     </header>
   );
