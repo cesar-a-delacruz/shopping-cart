@@ -1,3 +1,5 @@
+import "../../../styles/main/shop/Cart.css";
+
 function Cart({ data }) {
   let total = 0;
   return (
@@ -10,25 +12,30 @@ function Cart({ data }) {
           return (
             <li key={value.id}>
               <img src={value.image} alt="" />
-              <p>
-                Title: <span>{value.title}</span>
-              </p>
-              <p>
-                Amount: <span>{value.amount}</span>
-              </p>
-              <p>
-                Price: <span>${value.price}</span>
-              </p>
-              <p>
-                Subtotal: <span>${subtotal}</span>
-              </p>
+              <div className="description">
+                <p>
+                  Title: <span>{value.title}</span>
+                </p>
+                <p>
+                  Amount: <span>{value.amount}</span>
+                </p>
+                <p>
+                  Price: <span>${value.price}</span>
+                </p>
+                <p>
+                  Subtotal: <span>${subtotal.toFixed(2)}</span>
+                </p>
+              </div>
             </li>
           );
         })}
       </ul>
-      <p>
-        Total:<span>${total.toFixed(2)}</span>
-      </p>
+      <div className="bottom">
+        <p>
+          Total: <span>${total.toFixed(2)}</span>
+        </p>
+        <button>Checkout</button>
+      </div>
     </dialog>
   );
 }
