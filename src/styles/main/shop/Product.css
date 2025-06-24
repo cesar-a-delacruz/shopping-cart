@@ -1,0 +1,59 @@
+div.product,
+div.product img {
+  border-radius: 7px;
+}
+div.product,
+div.product form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.product {
+  background-color: rgb(28, 28, 28);
+  color: white;
+  box-shadow: 1.5px 1.5px 6px black;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+}
+div.product img {
+  object-fit: cover;
+  width: 275px;
+  height: 200px;
+  border: 2px grey solid;
+}
+div.product > *:not(:first-child) {
+  margin: 0.5rem 0;
+}
+div.product p:first-of-type {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+div.product form > * {
+  margin: 0.5rem 0;
+}
+div.product form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+}
+div.product form div input {
+  width: 35%;
+  border-radius: 7px;
+  padding: 4px 8px;
+  background-color: rgb(60, 60, 60);
+  border: 1px grey solid;
+  color: white;
+}
+div.product form button {
+  background-color: rgb(2, 144, 94);
+  border-radius: 7px;
+  padding: 4px 14px;
+  color: white;
+  font-weight: bold;
+  border-style: none;
+}
+div.product form button:hover {
+  background-color: rgb(1, 169, 111);
+}
