@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 import Cart from "./Cart";
-import '../../../styles/main/shop/Shop.css';
+import "../../../styles/main/shop/Shop.css";
 
 function Shop() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState({ items: [], size: 0 });
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
@@ -39,14 +39,22 @@ function Shop() {
 
   function addToCart(id, amount) {
     setCart((prev) => {
-      const product = {
-        ...products.find((value) => value.id === id),
-        amount: amount,
-      };
-      return [...prev, product];
+      const cartSize = document.querySelector("header > button > span");
+      cartSize.innerHTML = ` (${prev.size + amount})`;
+
+      let cartItem = prev.items.find((product) => product.id === id);
+
+      if (!cartItem) {
+        cartItem = {
+          ...products.find((product) => product.id === id),
+          amount: amount,
+        };
+        return { items: [...prev.items, cartItem], size: prev.size + amount };
+      }
+
+      cartItem.amount += amount;
+      return { items: prev.items, size: prev.size + amount };
     });
-    const cartSize = document.querySelector("nav > button > span");
-    cartSize.innerHTML = (parseInt(cartSize.innerHTML) || 0) + amount;
   }
 }
 
