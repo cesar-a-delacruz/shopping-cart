@@ -15,9 +15,14 @@ function Product({ data, addToCart }) {
         method="post"
         onSubmit={(e) => {
           e.preventDefault();
-          const amount = parseInt(
-            document.getElementById(`amount-${data.id}`).value,
-          );
+
+          const amountInput = document.getElementById(`amount-${data.id}`);
+          let amount = parseInt(amountInput.value);
+          if (!amount) {
+            amountInput.value = 1;
+            amount = 1;
+          }
+
           addToCart(data.id, amount);
         }}
       >
@@ -29,7 +34,6 @@ function Product({ data, addToCart }) {
             id={`amount-${data.id}`}
             placeholder="1"
             min={1}
-            required
           />
         </div>
         <button type="submit">Add to Cart</button>
