@@ -1,4 +1,4 @@
-// import { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, Outlet } from "react-router-dom";
 import * as Routing from "./Routing";
@@ -18,9 +18,9 @@ function App() {
 Routing.setRouting(<App />);
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
-  <RouterProvider router={Routing.router} />,
-  // </StrictMode>,
+  <StrictMode>
+    <RouterProvider router={Routing.router} />,
+  </StrictMode>,
 );
 
 export default App;

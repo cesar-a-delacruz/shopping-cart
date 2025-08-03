@@ -50,10 +50,14 @@ function Shop() {
           amount: amount,
         };
         return { items: [...prev.items, cartItem], size: prev.size + amount };
+      } else {
+        const newItems = prev.items.map((item) => {
+          return item.id === id
+            ? { ...item, amount: item.amount + amount }
+            : item;
+        });
+        return { items: newItems, size: prev.size + amount };
       }
-
-      cartItem.amount += amount;
-      return { items: prev.items, size: prev.size + amount };
     });
   }
 }
