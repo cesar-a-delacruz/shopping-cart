@@ -20,11 +20,12 @@ describe("render content", () => {
       const productAddToCart = document.querySelector(
         "div.product form button",
       );
-      const cartItems = document.querySelector("dialog#cart ul").children;
       const user = userEvent.setup();
 
       productAmount.value = 2;
       user.click(productAddToCart);
+
+      const cartItems = document.querySelector("dialog#cart ul").children;
       expect(cartItems.length).toBe(1);
     });
   });
