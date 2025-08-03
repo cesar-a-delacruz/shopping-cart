@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "./components/main/Main";
 import Home from "./components/main/Home";
 import Shop from "./components/main/shop/Shop";
+import ErrorPage from "./ErrorPage";
 
 let router, routes;
 function setRouting(app) {
@@ -9,6 +10,7 @@ function setRouting(app) {
     {
       path: "/",
       element: app,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/",

@@ -19,7 +19,7 @@ Routing.setRouting(<App />);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={Routing.router} />,
+    <RouterProvider router={Routing.router} />
   </StrictMode>,
 );
 
