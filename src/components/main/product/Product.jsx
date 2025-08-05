@@ -1,4 +1,4 @@
-import "../../../styles/main/shop/Product.css";
+import "./Product.module.css";
 
 function Product({ data, addToCart }) {
   return (

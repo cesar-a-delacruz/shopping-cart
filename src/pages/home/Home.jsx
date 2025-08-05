@@ -1,4 +1,4 @@
-import "../../styles/main/Home.css";
+import "./Home.module.css";
 
 function Home() {
   return (

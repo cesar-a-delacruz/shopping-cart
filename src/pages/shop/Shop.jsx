@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import Product from "./Product";
-import Cart from "./Cart";
-import "../../../styles/main/shop/Shop.css";
-import useProducts from "../../../hooks/useProducts";
+import { useState } from "react";
+import Product from "../../components/main/product/Product";
+import Cart from "../../components/main/cart/Cart";
+import "./Shop.module.css";
+import useProducts from "../../hooks/useProducts";
 
 function Shop() {
   const { products, loading, error } = useProducts();

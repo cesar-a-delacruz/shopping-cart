@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "./styles/Error.css";
+import "./Error.module.css";
 
-function ErrorPage() {
+function Error() {
   return (
     <div className="error">
       <h1>Oh no, this route doesn't exist!</h1>
@@ -12,4 +12,4 @@ function ErrorPage() {
   );
 }
 
-export default ErrorPage;
+export default Error;

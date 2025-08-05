@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "./components/main/Main";
-import Home from "./components/main/Home";
-import Shop from "./components/main/shop/Shop";
-import ErrorPage from "./ErrorPage";
+import Home from "./pages/home/Home";
+import Shop from "./pages/shop/Shop";
+import ErrorPage from "./pages/error/Error";
 
 let router, routes;
 function setRouting(app) {
