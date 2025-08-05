@@ -5,7 +5,11 @@ function Product({ data, addToCart }) {
     <div className="product">
       <img src={data.image} alt={data.title} />
 
-      <p>{data.title}</p>
+      <p>
+        {data.title.length > 50
+          ? data.title.substring(0, 50) + "..."
+          : data.title}
+      </p>
       <p>{data.category}</p>
       <p>
         Price: <span>${data.price}</span>
