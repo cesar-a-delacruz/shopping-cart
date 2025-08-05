@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
-import { render, waitFor, screen } from "@testing-library/react";
+import { render, waitFor, act } from "@testing-library/react";
 import * as Routing from "../src/Routing";
 import App from "../src/App";
 
@@ -12,7 +12,7 @@ describe("render content", () => {
       initialEntries: ["/shop"],
     });
 
-    render(<RouterProvider router={memRouter} />);
+    await act(async () => render(<RouterProvider router={memRouter} />));
 
     await waitFor(() => {
       expect(document.querySelectorAll("div.product").length).toBe(20);

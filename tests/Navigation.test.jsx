@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import { RouterProvider } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import * as Routing from "../src/Routing";
@@ -9,7 +9,7 @@ Routing.setRouting(<App />);
 
 describe("change pages", () => {
   it("click home", async () => {
-    render(<RouterProvider router={Routing.router} />);
+    await act(async () => render(<RouterProvider router={Routing.router} />));
     const user = userEvent.setup();
     const link = screen.getByText("Home");
     await user.click(link);
@@ -17,7 +17,7 @@ describe("change pages", () => {
     expect(mainChild.id).toBe("home");
   });
   it("click shop", async () => {
-    render(<RouterProvider router={Routing.router} />);
+    await act(async () => render(<RouterProvider router={Routing.router} />));
     const user = userEvent.setup();
     const link = screen.getByText("Shop");
     await user.click(link);

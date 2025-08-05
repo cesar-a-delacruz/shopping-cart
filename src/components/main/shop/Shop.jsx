@@ -8,19 +8,24 @@ function Shop() {
   const { products, loading, error } = useProducts();
   const [cart, setCart] = useState({ items: [], size: 0 });
 
-  if (loading) return <p>Loading...</p>;
-  else if (error) return <p>A network error was encountered</p>;
-  else
-    return (
-      <div id="shop">
-        <div id="products">
-          {products.map((product) => (
-            <Product key={product.id} data={product} addToCart={addToCart} />
-          ))}
-        </div>
-        <Cart data={cart} />
-      </div>
-    );
+  return (
+    <div id="shop">
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>A network error was encountered</p>
+      ) : (
+        <>
+          <div id="products">
+            {products.map((product) => (
+              <Product key={product.id} data={product} addToCart={addToCart} />
+            ))}
+          </div>
+          <Cart data={cart} />
+        </>
+      )}
+    </div>
+  );
 
   function addToCart(id, amount) {
     setCart((prev) => {
