@@ -2,40 +2,25 @@ import { useEffect, useState } from "react";
 import Product from "./Product";
 import Cart from "./Cart";
 import "../../../styles/main/shop/Shop.css";
+import useProducts from "../../../hooks/useProducts";
 
 function Shop() {
-  const [products, setProducts] = useState([]);
+  const { products, loading, error } = useProducts();
   const [cart, setCart] = useState({ items: [], size: 0 });
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((response) => response.json())
-      .then((json) => {
-        const newProducts = [];
-        json.forEach((item) => {
-          const product = {
-            id: item.id,
-            title: item.title,
-            price: parseFloat(item.price.toFixed(2)),
-            category: item.category,
-            image: item.image,
-          };
-          newProducts.push(product);
-        });
-        setProducts(newProducts);
-      });
-  }, []);
-
-  return (
-    <div id="shop">
-      <div id="products">
-        {products.map((product) => (
-          <Product key={product.id} data={product} addToCart={addToCart} />
-        ))}
+  if (loading) return <p>Loading...</p>;
+  else if (error) return <p>A network error was encountered</p>;
+  else
+    return (
+      <div id="shop">
+        <div id="products">
+          {products.map((product) => (
+            <Product key={product.id} data={product} addToCart={addToCart} />
+          ))}
+        </div>
+        <Cart data={cart} />
       </div>
-      <Cart data={cart} />
-    </div>
-  );
+    );
 
   function addToCart(id, amount) {
     setCart((prev) => {
