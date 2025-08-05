@@ -1,0 +1,26 @@
+div#home {
+  background-image:
+    linear-gradient(rgb(0, 0, 0, 50%), rgb(0, 0, 0, 50%)),
+    url("/public/shop-homepage.jpg");
+  object-fit: cover;
+  background-position: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+div#home * {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+div#home a {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+div#home a:hover {
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
