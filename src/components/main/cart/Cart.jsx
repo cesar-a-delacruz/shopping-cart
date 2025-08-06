@@ -1,4 +1,4 @@
-import "./Cart.module.css";
+import "./Cart.css";
 
 function Cart({ data }) {
   let total = 0;
