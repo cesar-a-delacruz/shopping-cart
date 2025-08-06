@@ -1,4 +1,5 @@
-import Credit from "./Credit";
+import Credit from "./credit/Credit";
+import "./Footer.module.css";
 
 function Footer() {
   return (

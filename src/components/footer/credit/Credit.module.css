@@ -1,0 +1,15 @@
+p.credit {
+    text-align: center;
+}
+p.credit,
+p.credit a {
+  color: white;
+}
+
+p.credit a {
+    font-weight: bold;
+  text-decoration: none;
+}
+p.credit a:hover {
+  text-decoration: underline;
+}
