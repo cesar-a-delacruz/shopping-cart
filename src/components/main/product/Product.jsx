@@ -1,8 +1,8 @@
-import "./Product.module.css";
+import styles from "./Product.module.css";
 
 function Product({ data, addToCart }) {
   return (
-    <div className="product">
+    <div className={styles.product}>
       <img src={data.image} alt={data.title} />
 
       <p>

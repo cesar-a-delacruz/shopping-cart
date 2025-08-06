@@ -1,4 +1,4 @@
-div#home {
+div.home {
   background-image:
     linear-gradient(rgb(0, 0, 0, 50%), rgb(0, 0, 0, 50%)),
     url("/public/shop-homepage.jpg");
@@ -10,17 +10,17 @@ div#home {
   align-items: center;
   height: 100vh;
 }
-div#home * {
+div.home * {
   color: white;
   font-weight: bold;
   text-align: center;
 }
 
-div#home a {
+div.home a {
   font-size: 1.5rem;
   text-decoration: none;
 }
-div#home a:hover {
+div.home a:hover {
   font-size: 1.5rem;
   text-decoration: underline;
 }

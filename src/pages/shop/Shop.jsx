@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Product from "../../components/main/product/Product";
 import Cart from "../../components/main/cart/Cart";
-import "./Shop.module.css";
+import styles from "./Shop.module.css";
 import useProducts from "../../hooks/useProducts";
 
 function Shop() {
@@ -16,7 +16,7 @@ function Shop() {
         <p>A network error was encountered</p>
       ) : (
         <>
-          <div id="products">
+          <div className={styles.products}>
             {products.map((product) => (
               <Product key={product.id} data={product} addToCart={addToCart} />
             ))}

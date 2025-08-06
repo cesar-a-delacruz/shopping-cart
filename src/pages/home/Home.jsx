@@ -1,8 +1,8 @@
-import "./Home.module.css";
+import styles from "./Home.module.css";
 
 function Home() {
   return (
-    <div id="home">
+    <div className={styles.home}>
       <h1>
         Discover handpicked treasures, unbeatable deals, and effortless
         shopping. <br /> All in one place.
